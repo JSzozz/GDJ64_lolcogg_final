@@ -262,7 +262,7 @@ public class MypageController {
         HttpSession session = request.getSession(false);
         if (session != null){
             session.invalidate();
-        }
+        }	
 		return "redirect:/";
 	}
 		
