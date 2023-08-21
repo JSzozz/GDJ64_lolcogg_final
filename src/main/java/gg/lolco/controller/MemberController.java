@@ -48,6 +48,19 @@ public class MemberController {
 	@PostMapping("/loginCheck")
 	public String loginCheck(@RequestParam Map<Object, String> param, Model model, HttpSession session) {
 
+		String name = "gusduddl486@naver.com";
+		try {
+			System.out.println(AESEncryptor.decrypt(name));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			System.out.println(AESEncryptor.encrypt(name));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// EMAIL : DB이메일(암호화상태)과 매칭을 위해 로그인 이메일 암호화
 		try {
 			param.put("email", AESEncryptor.encrypt(param.get("email")));
